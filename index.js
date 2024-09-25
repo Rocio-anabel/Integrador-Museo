@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const translate = require('node-google-translate-skidz');
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res)=> {
-    res.redirect("/index.html")
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 
 app.get('/imagenes/:object_id', (req,res) => {
