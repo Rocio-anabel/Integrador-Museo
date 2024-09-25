@@ -22,7 +22,7 @@ function cargarDepartamentos(){
             const option = document.createElement("option");
             option.value = departamento.departmentId;
             fetch(`http://localhost:8080/traducir/${departamento.displayName}`)
-            .then((response) => response.json())
+            .then((response) => response.text())
             .then(displayNametraducido => option.textContent = displayNametraducido)
             .catch(error => {
                 console.log(error.message)
