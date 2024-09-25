@@ -69,7 +69,7 @@ app.get('/traducir/:displayName', async(req,res) => {
     try {
         const displayNametraducido = await translateText(displayName, 'en','es');
         console.log(displayNametraducido);
-        res.status(200).send(displayNametraducido);
+        res.status(200).json({displayNametraducido});
     } catch (error) {
         console.error('Error traducción:', error);
         res.status(500).send({ status: 'error', message: 'Internal Server Error' });
