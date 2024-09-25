@@ -1,4 +1,3 @@
-const { response } = require("express");
 
 const URL_OBJETOS_CON_IMAG = "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=%22%22";
 const URL_DEPARTAMENTOS = "https://collectionapi.metmuseum.org/public/collection/v1/departments";
