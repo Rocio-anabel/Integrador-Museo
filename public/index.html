@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Metropolitano</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="filtros">
+        <form>
+            <label>Filtrar por:</label>
+            <select id="departamento" name="departamento">
+                <option value="">seleccionar departamento</option>
+            </select>
+            <input type="text" id="keyword" name="keyword" value="palabra clave">
+            <select id="localizacion" name="localizacion">
+                <option value="">seleccionar localización</option>
+                <option value="Europe">Europa</option>
+                <option value="France">Francia</option>
+                <option value="Paris">Paris</option>
+                <option value="China">China</option>
+                <option value="New York">New York</option>
+            </select>
+            <button id="buttonFiltrar">Buscar</button>
+        </form>
+    </div>
+    <div id="grilla">
+        
+    </div>
+    <div id="paginado">
+        <div class="pagination">
+            <button id="anterior">❮</button>
+            <button id="siguiente">❯</button>
+          </div>
+    </div>
+</body>
+</html>
