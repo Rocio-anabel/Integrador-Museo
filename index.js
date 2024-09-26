@@ -39,7 +39,6 @@ app.post('/traducir', async (req, res) => {
         culture: req.query.culture,
         dynasty: req.query.dynasty
     };
-    console.log(queryParams);
     if(!queryParams.title){
         return res.status(400).send({status: 'failed'})
     }
@@ -56,7 +55,6 @@ app.post('/traducir', async (req, res) => {
             culture: cultura,
             dynasty: dinastia
         };
-        console.log(objetoTraducido);
         res.status(200).send(objetoTraducido);
     } catch (error) {
         console.error('Error traducción:', error);
@@ -68,7 +66,6 @@ app.get('/traducir/:displayName', async(req,res) => {
     const displayName = req.params.displayName;
     try {
         const displayNametraducido = await translateText(displayName, 'en','es');
-        console.log(displayNametraducido);
         res.status(200).send(displayNametraducido);
     } catch (error) {
         console.error('Error traducción:', error);

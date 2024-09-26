@@ -21,7 +21,7 @@ function cargarDepartamentos(){
         data.departments.forEach(departamento => {
             const option = document.createElement("option");
             option.value = departamento.departmentId;
-            fetch(`http://localhost:8080/traducir/${departamento.displayName}`)
+            fetch(`traducir/${departamento.displayName}`)
             .then((response) => response.text())
             .then(displayNametraducido => option.textContent = displayNametraducido)
             .catch(error => {
@@ -41,7 +41,6 @@ function paginado(objectIDs, PAGINA_SIZE, paginaActual, indiceInicial) {
 
 function cargarPagina(objectIDs, paginaActual, indiceInicial) {
     const objetosIDsPaginados = paginado(objectIDs, PAGINA_SIZE, paginaActual, indiceInicial);
-    console.log(objetosIDsPaginados);
     cargarObjetos(objetosIDsPaginados);
 }
 
@@ -56,7 +55,7 @@ function cargarObjetos(objectIDs) {
                 throw new Error('Invalid object data');
             }
 
-            fetch(`http://localhost:8080/traducir/?title=${data.title}&culture=${data.culture}&dynasty=${data.dynasty}`,{
+            fetch(`traducir/?title=${data.title}&culture=${data.culture}&dynasty=${data.dynasty}`,{
                 method: 'POST'
             })
             .then((response) => response.json())
