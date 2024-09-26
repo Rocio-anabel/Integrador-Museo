@@ -98,7 +98,6 @@ fetch(URL_OBJETOS_CON_IMAG)
 .then((response)=> response.json())
 .then((data)=> {
     objectIDs = data.objectIDs;
-    console.log(objectIDs);
     cargarPagina(objectIDs, paginaActual, indInicialMuestra);
 })
 document.addEventListener('DOMContentLoaded', function () {
