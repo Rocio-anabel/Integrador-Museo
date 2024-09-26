@@ -21,7 +21,7 @@ function cargarDepartamentos(){
         data.departments.forEach(departamento => {
             const option = document.createElement("option");
             option.value = departamento.departmentId;
-            fetch(`traducir/${departamento.displayName}`)
+            fetch(`https://integrador-museo.vercel.app/traducir/${departamento.displayName}`)
             .then((response) => response.text())
             .then(displayNametraducido => option.textContent = displayNametraducido)
             .catch(error => {
@@ -55,7 +55,7 @@ function cargarObjetos(objectIDs) {
                 throw new Error('Invalid object data');
             }
 
-            fetch(`traducir/?title=${data.title}&culture=${data.culture}&dynasty=${data.dynasty}`,{
+            fetch(`https://integrador-museo.vercel.app/traducir/?title=${data.title}&culture=${data.culture}&dynasty=${data.dynasty}`,{
                 method: 'POST'
             })
             .then((response) => response.json())
